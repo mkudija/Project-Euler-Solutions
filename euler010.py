@@ -1,3 +1,10 @@
+# Summation of primes
+# Problem 10 
+# The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+
+# Find the sum of all the primes below two million.
+
+
 import math
 
 def is_prime(n):
@@ -21,20 +28,17 @@ def get_primes(number):
         number += 1
 
 
-def euler_10():
+def euler_10(n):
     total = 2
     for next_prime in get_primes(3):
-        n = 2000000
         if next_prime < n:
             total += next_prime
         else:
-            print('\nSum of Primes < {:,}: {:,}\n'.format(n, total))
-            return
+            return total
 
+n = 2000000
+print('\nSolving Euler 10 for {:,}...'.format(n))
+total = euler_10(n)
+print('\nThe sum of all primes below {:,}: {:,}\n'.format(n, total))
 
-# for i in range(10):
-#     print('{} is prime: {}'.format(i,is_prime(i)))
-
-
-print('\nSolving Euler 10...')
-euler_10()
+# The sum of all primes below 2,000,000: 142,913,828,922
